@@ -9,6 +9,7 @@ function HeroSection() {
   return (
     <Box
       sx={{
+        width: '100%',
         height: 500,
         backgroundImage: 'url(/hero-image.jpg)',
         backgroundSize: 'cover',
