@@ -21,7 +21,7 @@ function HeroSection() {
       }}
     >
       <Typography variant="h3" component="h1" gutterBottom>
-        Welcome to My Portfolio
+        Welcome to Yamauchi Ryoga's Site!!
       </Typography>
     </Box>
   );
