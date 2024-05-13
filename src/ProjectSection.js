@@ -24,7 +24,7 @@ function ProjectSection({ projects }) {
   });
 
   return (
-    <div>
+    <div id="projects">
       <Button
         aria-controls="simple-menu"
         aria-haspopup="true"
