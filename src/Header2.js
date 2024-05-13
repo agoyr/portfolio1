@@ -23,7 +23,7 @@ function Header() {
   };
 
   const menuItems = [
-    { name: 'Top', link: 'header' },
+    { name: 'Top', link: 'hero' },
     { name: 'About', link: 'about' },
     { name: 'Skills', link: 'skills' },
     { name: 'Projects', link: 'projects' },
