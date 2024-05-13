@@ -8,6 +8,7 @@ function HeroSection() {
     console.log('url(/hero-image.jpg)')
   return (
     <Box
+      id="hero"
       sx={{
         width: '100%',
         height: 500,
