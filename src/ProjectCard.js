@@ -3,6 +3,7 @@ import React from 'react';
 import { Grid, Card, CardContent, Typography, Box, Button, CardActions, Modal, CardActionArea } from '@mui/material';
 import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player';
+import { useNavigate } from 'react-router-dom';
 
 // MediaComponent in ProjectCard.js
 function MediaComponent({ type, src }) {
@@ -41,45 +42,31 @@ function MediaComponent({ type, src }) {
   
 
 function ProjectCard({ id, title, description, mediaType, mediaUrl }) {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+const navigate = useNavigate();  // ナビゲーションフックを使用
 
-  return (
+const handleOpen = () => {
+    navigate(`/projects/${id}`);  // 詳細ページへの遷移
+};
+
+return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
-      <motion.div whileHover={{ scale: 1.05 }}>
-      <Card sx={{ maxWidth: 345, boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)", borderRadius: "10px", m: 2 }}>
-          <CardActionArea onClick={handleOpen}>
+    <motion.div whileHover={{ scale: 1.05 }}>
+        <Card sx={{ maxWidth: 345, boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)", borderRadius: "10px", m: 2 }}>
+        <CardActionArea onClick={handleOpen}>
             <MediaComponent type={mediaType} src={mediaUrl} />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
+            <Typography gutterBottom variant="h5" component="h2">
                 {title}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
                 {description}
-              </Typography>
+            </Typography>
             </CardContent>
-          </CardActionArea>
+        </CardActionArea>
         </Card>
-      </motion.div>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 400, bgcolor: 'background.paper', boxShadow: 24, p: 4 }}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            {title}
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {description}
-          </Typography>
-          {/* Place for more detailed content like images, videos, links, etc. */}
-        </Box>
-      </Modal>
+    </motion.div>
     </Grid>
-  );
+);
 }
 
 export default ProjectCard;
