@@ -40,19 +40,32 @@ function ProjectDetail({ projects }) {
 
   function PaperSection({project}){
     return (
-      <Paper elevation={6} sx={{ padding: 3, margin: 2 }}>
+      <Paper elevation={6} sx={{ padding: 3, margin: 2, maxWidth: '800px', mx: 'auto' }}>
             <Typography variant="h3" component="h1" gutterBottom>
-              {project.title}
+                {project.title}
             </Typography>
             <List>
-              {renderInformationList("概要", [project.description])}
-              {renderInformationList("使用技術", [project.technologies || "Not specified"])}
-              {renderInformationList("実装内容", project.implementation ? project.implementation.split(';') : ["Not specified"])}
-              {renderInformationList("工夫点", project.innovations ? project.innovations.split(';') : ["Not specified"])}
-              {renderInformationList("学んだ点", project.lessonsLearned ? project.lessonsLearned.split(';') : ["Not specified"])}
+                {renderInformationList("概要", [project.description])}
+                {renderInformationList("使用技術", [project.technologies || "Not specified"])}
+                {renderInformationList("実装内容", project.implementation ? project.implementation.split(';') : ["Not specified"])}
+                {renderInformationList("工夫点", project.innovations ? project.innovations.split(';') : ["Not specified"])}
+                {renderInformationList("学んだ点", project.lessonsLearned ? project.lessonsLearned.split(';') : ["Not specified"])}
             </List>
             {project.videoUrl && renderMedia(project.videoUrl)}
-      </Paper>
+        </Paper>
+      // <Paper elevation={6} sx={{ padding: 3, margin: 2 }}>
+      //       <Typography variant="h3" component="h1" gutterBottom>
+      //         {project.title}
+      //       </Typography>
+      //       <List>
+      //         {renderInformationList("概要", [project.description])}
+      //         {renderInformationList("使用技術", [project.technologies || "Not specified"])}
+      //         {renderInformationList("実装内容", project.implementation ? project.implementation.split(';') : ["Not specified"])}
+      //         {renderInformationList("工夫点", project.innovations ? project.innovations.split(';') : ["Not specified"])}
+      //         {renderInformationList("学んだ点", project.lessonsLearned ? project.lessonsLearned.split(';') : ["Not specified"])}
+      //       </List>
+      //       {project.videoUrl && renderMedia(project.videoUrl)}
+      // </Paper>
     //   <Paper elevation={6} sx={{ padding: 3 }}>
     //   <Typography variant="h3" component="h1" gutterBottom>
     //     {project.title}
