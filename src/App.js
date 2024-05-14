@@ -17,15 +17,16 @@ const projects = [
   { id: 'shootingGame', title: "Shooting Game", description: `授業で作ったshootingゲームです。Win32APIを用いて作りました。
 当たり判定、描画、スコア、弾の弾ける演出など、ほとんど全ての内容を0から作りました`, mediaType: 'image', 
 mediaUrl: '/shoot2.png', 
+videoUrl: '/shooting2.mp4',
 technologies: 
 'C++; Win32API; Visual Studio',
-implementation: 'faf', 
+implementation: 'faf;faflkafa;fajkfjak', 
 innovations: '', 
 lessonsLearned:''},
   { id: 'flaffyShot',title: "Flaffy Shot", description: "これはモンスターストライクさんに影響を受けて作成した、ゲームである。", mediaType: 'image', mediaUrl: "/Fluffyimg.jpg" },
   { id: 'phantomTale',title: "Phantom tale", description: `これは学校における創造工学と呼ばれるチーム開発授業において作ったVRゲームである。
   私が担当したのは敵エネミーのAI部分、メインキャラクターの動作作成のサポート、3Dオプジェクトのテクスチャ周りである。`
-  , mediaType: 'image', mediaUrl: "/Phantom.png" },
+  , mediaType: 'image', mediaUrl: "/Phantom.png", videoUrl: '/Project\ 1.mp4' },
   { id: 'ttsApp',title: "音声合成アプリ", description: `これは音声合成（テキストから音声への変換）を行うことが
   できるアプリである。音声合成モデルはVITsによる事前学習モデルをfine-tuningしたことによって作成した。このモデルを動かすためのアプリを
   Flutterを用いて作成した
