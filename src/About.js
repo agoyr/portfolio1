@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material';
 
 function About() {
   return (
-    <Box id="about" sx={{ mt: 8, mb: 4, mx: 'auto', maxWidth: 800 }}>
+    <Box id="about" sx={{ mt: 8, mb: 4, mx: 'auto', maxWidth: 800, p: 2 }}>
       <Typography variant="h4" gutterBottom>About me</Typography>
       <Typography variant="body1" sx={{ mb: 2 }}>
         私は現在、名古屋大学大学院情報学研究科に所属しており、音声に関する研究を行っています。

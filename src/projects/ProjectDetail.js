@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, Typography, Paper, Grid, ImageList, ImageListItem,List, ListItemText, ListItem } from '@mui/material';
+import { Box, Typography, Paper, Grid, ImageList, ImageListItem,List, ListItemText, ListItem, Divider } from '@mui/material';
 import ReactPlayer from 'react-player';
 
 function ProjectDetail({ projects }) {
@@ -26,7 +26,7 @@ function ProjectDetail({ projects }) {
     <ImageList cols={3} gap={8}>
       {images.map((img, index) => (
         <ImageListItem key={index}>
-          <img src={img} alt={`Gallery image ${index + 1}`} loading="lazy" style={{ width: '100%' }} />
+          <img src={img} alt={`Gallery  ${index + 1}`} loading="lazy" style={{ width: '100%' }} />
         </ImageListItem>
       ))}
     </ImageList>
@@ -44,9 +44,10 @@ function ProjectDetail({ projects }) {
             <Typography variant="h3" component="h1" gutterBottom>
                 {project.title}
             </Typography>
-            <List>
+            <Divider sx={{ my: 2 }} />
+            <List sx={{width: '100%'}}>
                 {renderInformationList("概要", [project.description])}
-                {renderInformationList("使用技術", [project.technologies || "Not specified"])}
+                {renderInformationList("使用技術", project.technology ? project.technology.split(';') : ["Not specified"])}
                 {renderInformationList("実装内容", project.implementation ? project.implementation.split(';') : ["Not specified"])}
                 {renderInformationList("工夫点", project.innovations ? project.innovations.split(';') : ["Not specified"])}
                 {renderInformationList("学んだ点", project.lessonsLearned ? project.lessonsLearned.split(';') : ["Not specified"])}

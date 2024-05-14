@@ -16,13 +16,13 @@ function Header() {
     setOpen(isOpen);
   };
 
-  const scrollToSection = (section) => {
-    scroller.scrollTo(section, {
-      smooth: true,
-      offset: -100,
-    });
-    setOpen(false);  // Automatically close the drawer on selection
-  };
+  // const scrollToSection = (section) => {
+  //   scroller.scrollTo(section, {
+  //     smooth: true,
+  //     offset: -100,
+  //   });
+  //   setOpen(false);  // Automatically close the drawer on selection
+  // };
   const handleNavigation = (section) => {
     // ページ遷移してからスクロールする
     navigate('/');

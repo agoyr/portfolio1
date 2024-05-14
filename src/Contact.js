@@ -4,7 +4,7 @@ import { Box, Typography, Link } from '@mui/material';
 
 function Contact() {
   return (
-    <Box id="contact" sx={{ mt: 8, mb: 4, mx: 'auto', maxWidth: 800 }}>
+    <Box id="contact" sx={{ mt: 8, mb: 4, mx: 'auto', maxWidth: 800, p:2 }}>
       <Typography variant="h4" gutterBottom>Contact Me</Typography>
       <Typography variant="body1" sx={{ mb: 2 }}>
         Name: 山内 凌我
