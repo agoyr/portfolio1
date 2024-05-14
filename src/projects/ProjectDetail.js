@@ -26,7 +26,7 @@ function ProjectDetail({ projects }) {
     <ImageList cols={3} gap={8}>
       {images.map((img, index) => (
         <ImageListItem key={index}>
-          <img src={img} alt={`Gallery image ${index + 1}`} loading="lazy" style={{ width: '100%' }} />
+          <img src={img} alt={`Gallery  ${index + 1}`} loading="lazy" style={{ width: '100%' }} />
         </ImageListItem>
       ))}
     </ImageList>

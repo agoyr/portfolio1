@@ -10,7 +10,7 @@ import ProjectDetail from './projects/ProjectDetail';
 import Contact from './Contact';
 import Footer from './Footer2';
 import HeroSection from './HeroSection';
-import { Element } from 'react-scroll'
+// import { Element } from 'react-scroll'
 
 //Projects
 const projects = [
@@ -26,7 +26,7 @@ lessonsLearned:''},
   { id: 'flaffyShot',title: "Flaffy Shot", description: "これはモンスターストライクさんに影響を受けて作成した、ゲームである。", mediaType: 'image', mediaUrl: "/Fluffyimg.jpg" },
   { id: 'phantomTale',title: "Phantom tale", description: `これは学校における創造工学と呼ばれるチーム開発授業において作ったVRゲームである。
   私が担当したのは敵エネミーのAI部分、メインキャラクターの動作作成のサポート、3Dオプジェクトのテクスチャ周りである。`
-  , mediaType: 'image', mediaUrl: "/Phantom.png", videoUrl: '/Project\ 1.mp4' },
+  , mediaType: 'image', mediaUrl: "/Phantom.png", videoUrl: '/Project 1.mp4' },
   { id: 'ttsApp',title: "音声合成アプリ", description: `これは音声合成（テキストから音声への変換）を行うことが
   できるアプリである。音声合成モデルはVITsによる事前学習モデルをfine-tuningしたことによって作成した。このモデルを動かすためのアプリを
   Flutterを用いて作成した

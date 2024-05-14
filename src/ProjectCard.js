@@ -1,6 +1,6 @@
 // ProjectCard.js
 import React from 'react';
-import { Grid, Card, CardContent, Typography, Box, Button, CardActions, Modal, CardActionArea } from '@mui/material';
+import { Grid, Card, CardContent, Typography, Box, CardActionArea } from '@mui/material';
 import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
