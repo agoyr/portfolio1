@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import { Box, AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import  MenuIcon  from '@mui/icons-material/Menu';
 import { scroller } from 'react-scroll';
+import { useNavigate }  from 'react-router-dom';
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDrawer = (isOpen) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -21,6 +23,18 @@ function Header() {
     });
     setOpen(false);  // Automatically close the drawer on selection
   };
+  const handleNavigation = (section) => {
+    // ページ遷移してからスクロールする
+    navigate('/');
+    console.log('scroll');
+    setTimeout(() => {
+      scroller.scrollTo(section, {
+        smooth: true,
+        offset: -100,
+      });
+    }, 0); // ページが完全にロードされるのを待つ小さな遅延
+    setOpen(false);
+  };
 
   const menuItems = [
     { name: 'Top', link: 'hero' },
@@ -33,8 +47,8 @@ function Header() {
   return (
     <AppBar position="fixed" color="primary" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Portfolio Name
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 , cursor: 'pointer'}} onClick={() => handleNavigation('/')}>
+          Yamauchi Ryoga's Portfolio
         </Typography>
         <IconButton
           color="inherit"
@@ -53,7 +67,7 @@ function Header() {
           <List>
             {menuItems.map((item) => (
               <ListItem key={item.name} disablePadding>
-                <ListItemButton onClick={() => scrollToSection(item.link)}>
+                <ListItemButton onClick={() => {handleNavigation(item.link)}}>
                   <ListItemText primary={item.name} />
                 </ListItemButton>
               </ListItem>
@@ -62,7 +76,7 @@ function Header() {
         </Drawer>
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
           {menuItems.map((item) => (
-            <Button key={item.name} color="inherit" onClick={() => scrollToSection(item.link)}>
+            <Button key={item.name} color="inherit" onClick={() => handleNavigation(item.link)}>
               {item.name}
             </Button>
           ))}
